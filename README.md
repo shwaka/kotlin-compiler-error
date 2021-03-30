@@ -1,5 +1,9 @@
 `./gradlew compileKotlin` causes `java.lang.OutOfMemoryError`
 
+## memo
+- If `if (true) Foo() else Foo()` is replaced with `Foo()`, then `OutOfMemoryError` does not occur.
+- The number of type parameters is important. If it is decreased to 4 (depending on environment?), then `OutOfMemoryError` does not occur.
+
 ## environment
 ```
 $ ./gradlew --version
