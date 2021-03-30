@@ -1,5 +1,23 @@
 `./gradlew compileKotlin` causes `java.lang.OutOfMemoryError`
 
+## environment
+```
+$ ./gradlew --version
+
+------------------------------------------------------------
+Gradle 6.6.1
+------------------------------------------------------------
+
+Build time:   2020-08-25 16:29:12 UTC
+Revision:     f2d1fb54a951d8b11d25748e4711bec8d128d7e3
+
+Kotlin:       1.3.72
+Groovy:       2.5.12
+Ant:          Apache Ant(TM) version 1.10.8 compiled on May 10 2020
+JVM:          10.0.2 (Azul Systems, Inc. 10.0.2+13)
+OS:           Linux 5.8.0-48-generic amd64
+```
+
 ## output of `gradle`
 ```
 > Task :compileKotlin FAILED
