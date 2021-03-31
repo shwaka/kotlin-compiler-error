@@ -1,8 +1,11 @@
 `./gradlew compileKotlin` causes `java.lang.OutOfMemoryError`
 
 ## memo
-- If `if (true) Foo() else Foo()` is replaced with `Foo()`, then `OutOfMemoryError` does not occur.
-- The number of type parameters is important. If it is decreased to 4 (depending on environment?), then `OutOfMemoryError` does not occur.
+- If `if (true) Foo() else Foo()` is replaced with `Foo()`, then `OutOfMemoryError` does not occur and the compilation finished immediately.
+- The number of type parameters is important. If it is decreased to 4 (depending on environment?), then `OutOfMemoryError` does not occur and the compilation finished immediately.
+- If we add `<T1, ..., T6>` to *both* of `Foo()`, then `OutOfMemoryError` does not occur and the compilation finished immediately.
+- If we add `<T1, ..., T6>` to *one* of `Foo()`, then `OutOfMemoryError` does not occur but the compilation takes long time (20s in my environment).
+- Adding `<T1, ..., T6>` to `Bar(...)` has no effect.
 
 ## environment
 ```
